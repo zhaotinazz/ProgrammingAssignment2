@@ -17,6 +17,8 @@ mmakeCacheMatrix <- function(x=matrix()){
   list(set=set,get=get,setInverse=setInverse, getInverse=getInverse)
 }
 
+#cacheSolve function check whether the inverse matrix is cached firstly. 
+# Secondly, the cacheSolve function calculate the inverse of the matrix
 cacheSolve <- function(x, ...){
   Inver <- x$getInverse()
   if(!is.null(Inver)){
@@ -33,4 +35,3 @@ Matx <- makeCacheMatrix(matrix(1:4,nrow =2,ncol = 2))
 Matx$get()
 Matx$getInverse()
 cacheSolve(Matx)
-
